@@ -1,19 +1,19 @@
-<div class="categories form">
-<?php echo $this->Form->create('Category'); ?>
-	<fieldset>
-		<legend><?php echo __('Add Category'); ?></legend>
-	<?php
-		echo $this->Form->input('name');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Html->link(__('List Categories'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List News'), array('controller' => 'news', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New News'), array('controller' => 'news', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+    <div class="panel panel-default">
+    <div class="panel-heading">
+        Add category
+    </div>
+    <div class="panel-body">
+    	<div class="row">
+    		<div class="col-lg-6">
+    			<?php echo $this->Form->create('Category'); ?>
+    			<div class="form-group">
+    				<?php  echo $this->Form->input('name',array('label'=>'Name','class'=>'form-control')); ?>
+    				<p class="help-block">Enter category name.</p>
+    			</div>
+    			<button type="submit" class="btn btn-primary">Submit Button</button>
+    			<button type="reset" class="btn btn-success">Reset Button</button>
+    			<?php echo $this->Form->end(); ?> 
+    			</div>
+    		</div>
+    	</div>
+	</div>

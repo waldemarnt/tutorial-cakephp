@@ -1,23 +1,26 @@
-<div class="news form">
-<?php echo $this->Form->create('News'); ?>
-	<fieldset>
-		<legend><?php echo __('Edit News'); ?></legend>
-	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('title');
-		echo $this->Form->input('description');
-		echo $this->Form->input('category_id');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('News.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('News.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List News'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Category'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+    <div class="panel panel-default">
+    <div class="panel-heading">
+        Edit news
+    </div>
+    <div class="panel-body">
+    	<div class="row">
+    		<div class="col-lg-6">
+    			<?php echo $this->Form->create('News'); ?>
+    			<?php  echo $this->Form->input('id'); ?>
+    			<div class="form-group">
+    				<?php  echo $this->Form->input('title',array('label'=>'Title','class'=>'form-control')); ?>
+    				<p class="help-block">Example block-level help text here.</p>
+    			</div>
+    			<div class="form-group">
+    				<?php  echo $this->Form->input('description',array('type'=>'textarea','label'=>'Description','class'=>'form-control','rows'=>3)); ?>
+    			</div>
+    			<div class="form-group">
+    				<?php  echo $this->Form->input('category_id',array('class'=>'form-control')); ?>
+    			</div>
+    			<button type="submit" class="btn btn-primary">Submit Button</button>
+    			<button type="reset" class="btn btn-success">Reset Button</button>
+    			<?php echo $this->Form->end(); ?> 
+    			</div>
+    		</div>
+    	</div>
+	</div>

@@ -40,6 +40,12 @@
                     <li>
                         <a href="<?php echo $this->Html->url('/categories') ?>"><i class="fa fa-sitemap fa-fw"></i> Categories<span class="fa arrow"></span></a>
                     </li>
+                    <li>
+                        <a href="<?php echo $this->Html->url('/products') ?>"><i class="fa fa-sitemap fa-fw"></i> Products<span class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $this->Html->url('/product_categories') ?>"><i class="fa fa-sitemap fa-fw"></i> Products Categories<span class="fa arrow"></span></a>
+                    </li>
                 </ul>
                 <!-- end side-menu -->
             </div>

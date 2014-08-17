@@ -23,17 +23,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <body>
 		<!--  wrapper -->
 		<div id="wrapper">
-
 			<?php echo $this->element('navbar-top'); ?>
 			<?php echo $this->element('navbar-side'); ?>
-
-
 			<!--  page-wrapper -->
 			<div id="page-wrapper">
-			
 			<?php echo $this->Session->flash(); ?>
 			<?php echo $this->fetch('content'); ?>
-
 			</div>
 		</div>
 		<!-- end page-wrapper -->

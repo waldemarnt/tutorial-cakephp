@@ -15,7 +15,8 @@
 				'pace-theme-big-counter',
 				'social-buttons',
 				'style',
-				'timeline'
+				'timeline',
+				'select2'
 				)
 			);
 
@@ -27,16 +28,18 @@
 		echo $this->Html->script('bootstrap');
 		echo $this->Html->script(
 			array(
-			'dashboard-demo.js',
+			'select2',
+			'script',
 			'dataTables.bootstrap',
+			'jquery.dataTables',
 			'excanvas.min',
 			'flot-demo',
-			'jquery.dataTables',
 			'jquery.flot',
 			'jquery.flot.pie',
 			'jquery.flot.resize',
 			'jquery.flot.tooltip.min',
 			'jquery.metisMenu',
+			'dashboard-demo.js',
 			'morris',
 			'morris-demo',
 			'pace',

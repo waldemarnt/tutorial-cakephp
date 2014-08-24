@@ -1,8 +1,11 @@
 $(document).ready(function() {
 
-$('#inputTags').select2({
-	tags:['products','shoes','shorts','low-price']
-});
+	$('#inputTags').select2({
+		tags:['products','shoes','shorts','low-price']
+	});
 
-$('#selectCategory').select2();
+	$('#selectCategory').select2();
+	Dropzone.autoDiscover = false;
+
+
 });

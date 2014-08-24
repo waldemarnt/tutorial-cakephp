@@ -16,7 +16,6 @@ class ProductsController extends AppController
 	
 	public function add() 
 	{
-
 		if($this->request->is('post')) {
 			$this->Product->create();
 			if($this->Product->save($this->request->data)) {
@@ -26,6 +25,7 @@ class ProductsController extends AppController
 				$this->Session->setFlash('Error product not saved!');
 
 		}
+
 	$this->set('product_categories',$this->Product->ProductCategory->find('list'));
 
 	}
@@ -43,7 +43,6 @@ class ProductsController extends AppController
 	$this->request->data = $this->Product->findById($id);
 	$this->set('product_categories',$this->Product->ProductCategory->find('list'));
 	}
-
 
 
 

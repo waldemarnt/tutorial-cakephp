@@ -20,6 +20,8 @@
  */
 
 App::uses('Controller', 'Controller');
+App::uses('AuthComponent', 'Controller/Component');
+
 
 /**
  * Application Controller
@@ -31,4 +33,63 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+
+	public $components = array(
+		'Auth',
+		'Session'
+		);
+
+	public $helpers = array(
+		'Session',
+		'Form'
+		);
+
+	function beforeFilter()
+	{
+		$this->Auth->authenticate = array(
+			AuthComponent::ALL =>array(
+				'UserModel'=>'User',
+				'fields'=>array(
+					'username'=>'email',
+					'password'=>'password'
+					)
+				),
+			'Form',
+			);
+
+		$this->Auth->authorize = "Controller";
+
+		$this->Auth->loginAction = array(
+			'plugin'=>null,
+			'controller'=>'users',
+			'action'=>'login'
+			);
+
+		$this->Auth->logoutRedirect = array(
+			'plugin'=>null,
+			'controller'=>'users',
+			'action'=>'login'
+			);
+
+		$this->Auth->loginRedirect = array(
+			'plugin'=>null,
+			'controller'=>'products',
+			'action'=>'index'
+			);
+
+		$this->Auth->error=__('Erro , você não logou!');
+
+		$this->Auth->allowedActions = array('add','resetpassword','login');
+
+	}
+
+	public function isAuthorized($user)
+	{
+		if(!empty($this->request->params['admin'])) {
+			return $user['role_id'] == 1;
+		}
+		return !empty($user);
+	}
+
 }
+

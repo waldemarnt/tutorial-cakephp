@@ -16,7 +16,8 @@
 				'social-buttons',
 				'style',
 				'timeline',
-				'select2'
+				'select2',
+				'dropzone'
 				)
 			);
 
@@ -44,7 +45,8 @@
 			'morris-demo',
 			'pace',
 			'raphael-2.1.0.min',
-			'siminta'
+			'siminta',
+			'dropzone'
 			)
 		);
 	?>

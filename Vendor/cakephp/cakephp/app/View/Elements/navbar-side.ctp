@@ -46,6 +46,9 @@
                     <li>
                         <a href="<?php echo $this->Html->url('/product_categories') ?>"><i class="fa fa-sitemap fa-fw"></i> Products Categories<span class="fa arrow"></span></a>
                     </li>
+                    <li>
+                        <a href="<?php echo $this->Html->url('/users') ?>"><i class="fa fa-user fa-fw"></i> Users<span class="fa arrow"></span></a>
+                    </li>
                 </ul>
                 <!-- end side-menu -->
             </div>
